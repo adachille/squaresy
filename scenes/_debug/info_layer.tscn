@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://7u6ppy80hm4q"]
+
+[ext_resource type="Script" path="res://scenes/_debug/info_layer.gd" id="1_n0wiu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryfmq"]
+font_size = 8
+font_color = Color(0.67, 0.67, 0.67, 1)
+
+[node name="InfoLayer" type="CanvasLayer"]
+script = ExtResource("1_n0wiu")
+
+[node name="InfoBox" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Velocity" type="Label" parent="InfoBox"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ryfmq")

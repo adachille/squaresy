@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bce5w0a7lc2mx"]
+
+[ext_resource type="PackedScene" uid="uid://bwn0tcwvj8mv" path="res://scenes/_debug/test_zone.tscn" id="1_3dvx2"]
+[ext_resource type="PackedScene" uid="uid://c5v5y5g8xkh8h" path="res://scenes/game/characters/player.tscn" id="2_l1gax"]
+[ext_resource type="PackedScene" uid="uid://7u6ppy80hm4q" path="res://scenes/_debug/info_layer.tscn" id="3_b103s"]
+
+[node name="World" type="Node2D"]
+
+[node name="TestZone" parent="." instance=ExtResource("1_3dvx2")]
+
+[node name="Player" parent="." instance=ExtResource("2_l1gax")]
+position = Vector2(64, 72)
+
+[node name="InfoLayer" parent="." instance=ExtResource("3_b103s")]

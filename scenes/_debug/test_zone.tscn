@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwn0tcwvj8mv"]
+
+[ext_resource type="Script" path="res://scenes/game/levels/connect_polygons.gd" id="1_62j7o"]
+
+[node name="TestZone" type="StaticBody2D"]
+script = ExtResource("1_62j7o")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(8, 0, 8, 160, 64, 160, 64, 176, 80, 176, 80, 160, 128, 160, 144, 152, 152, 152, 168, 136, 192, 136, 192, 168, 216, 168, 216, 152, 240, 152, 288, 168, 312, 168, 312, 0, 320, 0, 320, 184, 0, 184, 0, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionPolygon2D"]
