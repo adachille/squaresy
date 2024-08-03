@@ -10,6 +10,8 @@ size = Vector2(16, 16)
 position = Vector2(-8, -8)
 scale = Vector2(0.9, 0.9)
 script = ExtResource("1_br6sg")
+speed = 75.0
+jump_velocity = -200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
