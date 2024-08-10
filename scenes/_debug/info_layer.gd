@@ -6,7 +6,8 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	velocity.text = "Velocity: Not set."
+	player_velocity.text = "Velocity: Not set."
+	player_rotation.text = "Rotation: Not set."
 	pass
 
 
