@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-@onready var velocity = $InfoBox/Velocity
+@onready var player_velocity = $InfoBox/Velocity
+@onready var player_rotation = $InfoBox/Rotation
 @onready var player = $"../Player"
 
 # Called when the node enters the scene tree for the first time.
@@ -11,4 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	velocity.text = "Velocity: %s" % str(player.velocity)
+	player_velocity.text = "Velocity: %s" % str(player.velocity)
+	
+	var rotation_degrees = round(rad_to_deg(player.rotation))
+	player_rotation.text = "Rotation: %s" % str(rotation_degrees)

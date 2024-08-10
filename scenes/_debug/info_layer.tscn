@@ -16,3 +16,7 @@ offset_bottom = 40.0
 [node name="Velocity" type="Label" parent="InfoBox"]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_ryfmq")
+
+[node name="Rotation" type="Label" parent="InfoBox"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ryfmq")
