@@ -2,8 +2,7 @@ extends RigidBody2D
 
 @export var jump_strength = -300
 @export var rotation_rate = PI*2
-@export var torque_strength = 100.0
-@export var move_speed = 30
+@export var slide_speed = 10000.0
 
 @onready var collision_polygon_2d = $CollisionPolygon2D
 
@@ -24,9 +23,10 @@ func handle_jump() -> void:
 
 func handle_movement(input_axis: int, delta: float) -> void:
 	if input_axis:
-		apply_torque(input_axis * torque_strength * delta)
+		if on_floor:
+			apply_force(Vector2(input_axis * slide_speed * delta, 0))
 		angular_velocity = rotation_rate * input_axis
-		linear_velocity.x = move_toward(linear_velocity.x, move_speed * input_axis, delta)
+		
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var num_contacts = state.get_contact_count()
@@ -35,7 +35,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	on_floor = false
 	for i in range(num_contacts):
 		var normal := state.get_contact_local_normal(i)
-		if normal.dot(Vector2.UP) > 0.99: # TODO: dial this in
+		if normal.dot(Vector2.UP) > 0.25:
 			on_floor = true
 			#  1.0 would be perfectly straight up
 			#  0.0 is a wall

@@ -20,3 +20,7 @@ label_settings = SubResource("LabelSettings_ryfmq")
 [node name="Rotation" type="Label" parent="InfoBox"]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_ryfmq")
+
+[node name="PlayerOnFloor" type="Label" parent="InfoBox"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ryfmq")
